@@ -40,11 +40,15 @@
         background: conic-gradient(from 180deg, var(--brand), var(--brand-2));
         box-shadow: 0 0 0 1px rgba(255,255,255,.15) inset, 0 8px 30px rgba(124,77,255,.25);
       }
-      .topnav { display:flex; gap:12px; flex-wrap: wrap; justify-content: flex-end; }
+      .topnav { display:flex; gap:12px; flex-wrap: wrap; justify-content: flex-end; align-items:center; }
       .link { display:inline-flex; align-items:center; gap:6px; text-decoration: none; font-weight: 700; padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); color: var(--text); background: rgba(255,255,255,.05); box-shadow: 0 1px 0 rgba(255,255,255,.06) inset; transition: all .18s ease; }
       .link:hover, .link.active { border-color: rgba(124,77,255,.55); background: linear-gradient(135deg, rgba(124,77,255,.22), rgba(0,212,255,.18)); color: #fff; }
       .link:active { transform: translateY(1px); }
       .filters { display:flex; gap:8px; flex-wrap: wrap; justify-content: flex-end; }
+      .lang-toggle { display:inline-flex; gap:4px; padding: 3px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06); margin-left: 6px; box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 8px 18px rgba(0,0,0,.25); }
+      .lang-btn { appearance:none; border:0; background:transparent; color:var(--text); font-weight:800; font-size: 12px; letter-spacing:.3px; padding: 6px 10px; border-radius: 999px; cursor:pointer; opacity:.9; }
+      .lang-btn:hover { opacity: 1; }
+      .lang-btn.active { background: linear-gradient(135deg, rgba(124,77,255,.55), rgba(0,212,255,.38)); color:#fff; box-shadow: 0 2px 10px rgba(124,77,255,.35); }
       .btn {
         appearance: none; border: 1px solid rgba(255,255,255,.08);
         color: var(--text); background: rgba(255,255,255,.03);
@@ -144,6 +148,7 @@
         <div class="hero">
           <div class="brand"><span class="logo" aria-hidden="true"></span> EasyshopPic</div>
           <nav class="topnav" aria-label="主导航">
+            <a class="link" href="#download" data-i18n="nav_download">下载</a>
             <a class="link" href="#features" data-i18n="nav_features">特点</a>
             <a class="link" href="#how" data-i18n="nav_how">使用方式</a>
             <a class="link" href="#gallery" data-i18n="nav_gallery">样片</a>
@@ -163,8 +168,8 @@
         <h1 data-i18n="hero_title">EasyshopPic — 电商产品图一站式优化</h1>
         <p data-i18n="hero_desc">简单一拍，获得高质量、可用于网店与社媒的产品图。对比原图与效果图，快速挑选最佳展示。</p>
         <div class="cta">
-          <a href="#gallery" class="btn primary" data-i18n="cta_browse">开始浏览样片</a>
-          <a href="#gallery" class="btn" data-i18n="cta_all">全部</a>
+          <a href="#download" class="btn primary" data-i18n="cta_download">下载软件</a>
+          <a href="#gallery" class="btn" data-i18n="cta_browse">开始浏览样片</a>
         </div>
         <div class="demo-wrap">
           <div class="phone-demo" aria-label="拍摄并优化的演示">
@@ -212,6 +217,24 @@
                 <div class="flow-arrow" aria-hidden="true"></div>
                 <div class="flow-step"><span class="flow-icon">🚀</span><div>用于上架/社媒</div></div>
               </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="container" id="download" style="padding-top:8px;">
+        <div class="grid" style="gap:12px;">
+          <div class="card" style="grid-column: span 12; padding: 16px;">
+            <div class="title" style="padding: 6px 0 10px;" data-i18n="download_title">下载软件</div>
+            <div class="tiny" style="margin-bottom:10px;" data-i18n="download_desc">选择你的平台下载并安装 EasyshopPic。</div>
+            <div class="grid" style="gap:12px;">
+              <div class="card" style="grid-column: span 12; padding:14px; display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:12px;">
+                <a class="btn primary" href="#" data-i18n="dl_macos">macOS（Apple Silicon/Intel）</a>
+                <a class="btn" href="#" data-i18n="dl_windows">Windows 10+</a>
+                <a class="btn" href="#" data-i18n="dl_ios">iOS（App Store）</a>
+                <a class="btn" href="#" data-i18n="dl_android">Android（Google Play）</a>
+              </div>
+            </div>
+            <div class="tiny" style="margin-top:8px;" data-i18n="download_note">提示：以上链接为占位，请提供实际下载地址后替换。</div>
           </div>
         </div>
       </section>
@@ -335,6 +358,7 @@
       // 简易 i18n
       const I18N = {
         zh: {
+          nav_download: '下载',
           nav_features: '特点',
           nav_how: '使用方式',
           nav_gallery: '样片',
@@ -343,6 +367,7 @@
           hero_desc: '简单一拍，获得高质量、可用于网店与社媒的产品图。对比原图与效果图，快速挑选最佳展示。',
           cta_browse: '开始浏览样片',
           cta_all: '全部',
+          cta_download: '下载软件',
           feat_1: '左右并排对比',
           feat_2: '一致的电商风格',
           feat_3: '高分屏适配',
@@ -354,6 +379,13 @@
           flow_2: '智能优化 出效果图',
           flow_3: '并排校对 细节',
           flow_4: '用于上架/社媒',
+          download_title: '下载软件',
+          download_desc: '选择你的平台下载并安装 EasyshopPic。',
+          dl_macos: 'macOS（Apple Silicon/Intel）',
+          dl_windows: 'Windows 10+',
+          dl_ios: 'iOS（App Store）',
+          dl_android: 'Android（Google Play）',
+          download_note: '提示：以上链接为占位，请提供实际下载地址后替换。',
           compare: '产品对比',
           vs_tag: '原图 vs 效果',
           chip_original: '原图',
@@ -361,6 +393,7 @@
           footer_copy: '© EasyshopPic · 专注电商产品图展示'
         },
         en: {
+          nav_download: 'Download',
           nav_features: 'Features',
           nav_how: 'How It Works',
           nav_gallery: 'Gallery',
@@ -369,6 +402,7 @@
           hero_desc: 'Shoot once, get high-quality images for shops and socials. Compare original vs result side-by-side to choose the best.',
           cta_browse: 'Browse Samples',
           cta_all: 'All',
+          cta_download: 'Download',
           feat_1: 'Side-by-side compare',
           feat_2: 'Consistent commerce style',
           feat_3: 'HiDPI-ready',
@@ -380,6 +414,13 @@
           flow_2: 'Enhance to get result',
           flow_3: 'Review details side-by-side',
           flow_4: 'Use for listings/social',
+          download_title: 'Download',
+          download_desc: 'Choose your platform to install EasyshopPic.',
+          dl_macos: 'macOS (Apple Silicon/Intel)',
+          dl_windows: 'Windows 10+',
+          dl_ios: 'iOS (App Store)',
+          dl_android: 'Android (Google Play)',
+          download_note: 'Note: These links are placeholders. Replace with real URLs.',
           compare: 'Compare',
           vs_tag: 'Original vs Result',
           chip_original: 'Original',
