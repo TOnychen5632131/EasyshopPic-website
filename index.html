@@ -58,6 +58,25 @@
       .btn:hover { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.08); }
       .btn.active { background: linear-gradient(180deg, rgba(124,77,255,.25), rgba(0,212,255,.18)); border-color: rgba(124,77,255,.35); }
       .sub { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
+      .download-card {
+        margin-top: 18px;
+        background: linear-gradient(135deg, rgba(124,77,255,.18), rgba(0,212,255,.12));
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 16px;
+        padding: 18px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 12px 28px rgba(0,0,0,.28), 0 1px 0 rgba(255,255,255,.05) inset;
+      }
+      .download-info { flex: 1 1 260px; min-width: 220px; }
+      .download-eyebrow { font-size: 12px; font-weight: 700; color: var(--brand-2); margin-bottom: 4px; }
+      .download-title { margin: 0; font-size: clamp(18px, 2.4vw, 24px); line-height: 1.35; font-weight: 700; }
+      .download-desc { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+      .download-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: flex-end; }
+      .download-actions .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; }
       .btn.primary { background: linear-gradient(135deg, rgba(124,77,255,.9), rgba(0,212,255,.8)); border-color: rgba(124,77,255,.5); }
       .btn.primary:hover { filter: brightness(1.05); }
 
@@ -137,6 +156,9 @@
         .sbs-pane + .sbs-pane { border-left: none; border-top: 1px solid rgba(255,255,255,.06); }
         .demo-wrap { gap: 16px; }
         .phone-demo { width: clamp(220px, 80vw, 420px); }
+        .download-card { padding: 16px; margin-top: 14px; flex-direction: column; align-items: flex-start; }
+        .download-actions { width: 100%; justify-content: flex-start; }
+        .download-actions .btn { flex: 1 1 0; min-width: 0; }
       }
       img { -webkit-user-drag: none; user-select: none; }
       @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
@@ -160,6 +182,17 @@
         </div>
         <!-- 分类过滤移除：顶部只保留主导航。 -->
         <p class="sub" data-i18n="tagline">简单一拍 → 智能优化 → 一键对比与导出。</p>
+        <div class="download-card">
+          <div class="download-info">
+            <span class="download-eyebrow" data-i18n="download_eyebrow">下载体验</span>
+            <h2 class="download-title" data-i18n="download_title">多端体验 EasyshopPic</h2>
+            <p class="download-desc" data-i18n="download_desc">iOS 与网页版保持同步更新，随时随地开启产品优化。</p>
+          </div>
+          <div class="download-actions">
+            <a class="btn primary" href="https://apps.apple.com/cn/app/snaptosell/id6751837308?platform=iphone" data-i18n="download_ios">iOS 版本下载</a>
+            <a class="btn" href="https://snaptosell.vercel.app/" data-i18n="download_web">网页版（安卓 / 电脑）</a>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -346,6 +379,11 @@
           hero_title: 'EasyshopPic — 电商产品图一站式优化',
           hero_desc: '简单一拍，获得高质量、可用于网店与社媒的产品图。对比原图与效果图，快速挑选最佳展示。',
           cta_browse: '开始浏览样片',
+          download_eyebrow: '下载体验',
+          download_title: '多端体验 EasyshopPic',
+          download_desc: 'iOS 与网页版保持同步更新，随时随地开启产品优化。',
+          download_ios: 'iOS 版本下载',
+          download_web: '网页版（安卓 / 电脑）',
           cta_all: '全部',
           feat_1: '左右并排对比',
           feat_2: '一致的电商风格',
@@ -373,6 +411,11 @@
           hero_title: 'EasyshopPic — One-stop product photo enhancement',
           hero_desc: 'Shoot once, get high-quality images for shops and socials. Compare original vs result side-by-side to choose the best.',
           cta_browse: 'Browse Samples',
+          download_eyebrow: 'Product Access',
+          download_title: 'Experience EasyshopPic everywhere',
+          download_desc: 'Use the native iOS app or the browser version for Android and desktop to keep your workflow in sync.',
+          download_ios: 'Download for iOS',
+          download_web: 'Open Web Version (Android & Desktop)',
           cta_all: 'All',
           feat_1: 'Side-by-side compare',
           feat_2: 'Consistent commerce style',
